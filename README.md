@@ -79,6 +79,10 @@ Add the following lines under the `[mysqld]` line.
     character-set-client-handshake = FALSE
     character-set-server = utf8mb4
     collation-server = utf8mb4_unicode_ci
+	
+Also, add the following line under the `[mysql]` line.
+
+    default-character-set = utf8mb4
 
 Restart MariaDB and enable it to automatically start at boot time.
 
@@ -104,7 +108,7 @@ Login to MariaDB using root user via `mysql -uroot -p` to ensure that setting is
 
 	MariaDB [(none)]>
 	
-For unexpected response like `ERROR 1698 (28000): Access denied for user 'root'@'localhost'` even you ware enter the right password is cause from default authentication plugin for user root, solution is clearly explain in this [link: Authentication Plugin](https://mariadb.com/kb/en/library/authentication-plugin-unix-socket/)
+For unexpected response like `ERROR 1698 (28000): Access denied for user 'root'@'localhost'` even you were enter the right password is cause from default authentication plugin for user root, solution is clearly explain in this [link: Authentication Plugin](https://mariadb.com/kb/en/library/authentication-plugin-unix-socket/)
 
 # Install Nginx, Node.js and Redis
 
